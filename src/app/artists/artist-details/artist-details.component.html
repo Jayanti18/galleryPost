@@ -1,0 +1,30 @@
+<div *ngIf="artist" class="row">
+  <div class="col-md-12">
+    <h2 *ngIf="artist._id">Artistt Details</h2>
+    <h2 *ngIf="!artist._id">New Artist</h2>
+  </div>
+</div>
+<div *ngIf="artist" class="row">
+  <form class="col-md-12">
+    <div class="form-group">
+      <label for="artist-name">Name</label>
+      <input class="form-control" name="artist-name" [(ngModel)]="artist.name" placeholder="Name"/>
+    </div>
+    <div class="form-group">
+      <label for="artist-email">Email</label>
+      <input class="form-control" name="artist-email" [(ngModel)]="artist.email" placeholder="support@mlab.com"/>
+    </div>
+    <div class="form-group">
+      <label for="artist-phone">Phone#</label>
+      <input class="form-control" name="artist-phone" [(ngModel)]="artist.phone#" placeholder="999-999-9999"/>
+    </div>
+    <div class="form-group">
+      <label for="artist-present">Present</label>
+      <input class="form-control" name="studne-present" [(ngModel)]="artist.present" placeholder=""/>
+    </div>
+    <button class="btn btn-primary" *ngIf="!artist._id" (click)="createArtist(artist)">Create</button>
+    <button class="btn btn-info" *ngIf="artist._id" (click)="updateArtist(artist)">Update</button>
+    <button class="btn btn-danger" *ngIf="artist._id" (click)="deleteArtist(artist._id)">Delete</button>
+  </form>
+</div>
+
